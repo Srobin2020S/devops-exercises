@@ -42,7 +42,7 @@ The principle of least privilege refers to the practice of providing minimal per
   * Subject name
   * Subject Public Key info
  
-Every certificates must be signed by a trusted authority, a certificate chain is a concatenation of mutilple certificates signed by a more trusted authority from the one delivered by the website to the root Certificate Authority (CA). The root Certificate Authority is the top most trusted authority and every browsers embark their certificate natively.
+Every certificates must be signed by a trusted authority, a certificate chain is a concatenation of multiple certificates signed by a more trusted authority from the one delivered by the website to the root Certificate Authority (CA). The root Certificate Authority is the top most trusted authority and every browsers embark their certificate natively.
  
 </b></details>
 
@@ -164,7 +164,7 @@ Multi-Factor Authentication (Also known as 2FA). Allows the user to present two 
 <details>
 <summary>What is password salting? What attack does it help to deter?</summary><br><b>
 
-Password salting is the processing of prepending or appending a series of characters to a user's password before hashing this new combined value. This value should be different for every single user but the same salt should be applied to the same user password everytime it is validated.
+Password salting is the processing of prepending or appending a series of characters to a user's password before hashing this new combined value. This value should be different for every single user but the same salt should be applied to the same user password every time it is validated.
 
  This ensures that users that have the same password will still have very different hash values stored in the password database. This process specifically helps deter rainbow table attacks since a new rainbow table would need to be computed for every single user in the database.
 </b></details>
@@ -340,7 +340,7 @@ The 'S' in HTTPS stands for 'secure'. HTTPS uses TLS to provide encryption of HT
   [Red Hat](https://www.redhat.com/en/topics/security/what-is-cve#how-does-it-work) : "When someone refers to a CVE (Common Vulnerabilities and Exposures), they mean a security flaw that's been assigned a CVE ID number. They don’t include technical data, or information about risks, impacts, and fixes." So CVE is just identified by an ID written with 8 digits. The CVE ID have the following format:  CVE prefix + Year + Arbitrary Digits.
  Anyone can submit a vulnerability, [Exploit Database](https://www.exploit-db.com/submit) explains how it works to submit.
   
-Then CVSS stands for Common Vulnerability Scoring System, it attemps to assign severity scores to vulnerabilities, allowing to ordonnance and prioritize responses and ressources according to threat. 
+Then CVSS stands for Common Vulnerability Scoring System, it attempts to assign severity scores to vulnerabilities, allowing to ordonnance and prioritize responses and resources according to threat. 
  
 </b></details>
 
@@ -395,7 +395,7 @@ Spectre is an attack method which allows a hacker to “read over the shoulder�
 <details>
 <summary>What is CSRF? How to handle CSRF?</summary><br><b>
 
-Cross-Site Request Forgery (CSRF) is an attack that makes the end user to initate a unwanted action on the web application in which the user has a authenticated session, the attacker may user an email and force the end user to click on the link and that then execute malicious actions. When an CSRF attack is successful it will compromise the end user data 
+Cross-Site Request Forgery (CSRF) is an attack that makes the end user to initiate a unwanted action on the web application in which the user has a authenticated session, the attacker may user an email and force the end user to click on the link and that then execute malicious actions. When an CSRF attack is successful it will compromise the end user data 
 
 You can use OWASP ZAP to analyze a "request", and if it appears that there no protection against cross-site request forgery when the Security Level is set to 0 (the value of csrf-token is SecurityIsDisabled.) One can use data from this request to prepare a CSRF attack by using OWASP ZAP
 </b></details>
@@ -640,3 +640,31 @@ You can’t. You will always be exposed to security risk once you start using op
 - Network: Modify network devices and their configuration to create microsegmentation 
 
 </b></details>
+
+<details>
+<summary>What are ephemeral environments in the context of Microsegmentation?</summary><br><b>
+
+- These are short-lived resources like containers or serverless functions that start and stop quickly.
+- Because they don’t last long, they need security rules that can change just as fast.
+- Microsegmentation helps by giving each one exactly the network access it needs — nothing more.
+
+</b></details>
+
+<details>
+<summary>How does Microsegmentation help prevent lateral movement?</summary><br><b>
+
+- It sets tight rules for how services or systems can talk to each other.
+- If one system gets hacked, the attacker can’t easily move to others.
+- By dividing systems into smaller zones, it makes the whole network harder to break into.
+
+</b></details>
+
+<details>
+<summary>What challenges arise when scaling Microsegmentation?</summary><br><b>
+
+- As more systems get added, managing all the rules becomes harder.
+- It’s tough to keep security rules consistent when everything’s changing all the time.
+- You also have to be careful not to slow things down while keeping everything secure.
+
+</b></details>
+
